@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (isManagerAccount) {
                 accountTitle.innerHTML = 'Conta de Cliente';
                 switchLink.innerHTML = 'Mudar para conta de gestor';
-                accountIcon.src = 'images/client-icon.png';  
+                accountIcon.src = 'images/customer-icon.jpg';  
             } else {
                 accountTitle.innerHTML = 'Conta de Gestor <br>de Parque';
                 switchLink.innerHTML = 'Mudar para conta de cliente';
