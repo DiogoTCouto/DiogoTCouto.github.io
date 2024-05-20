@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva da Vaga</title>
+    <link rel="stylesheet" href="style/reservation.css">
+    <script src="javascript/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="parking-reservations.html" class="back-button">&larr;</a>
+            <h1 id="reservation-title">Reserva da Vaga</h1>
+            <p>Preencha as informações necessárias abaixo</p>
+        </header>
+        <form class="reservation-form">
+            <label for="duration">Duração</label>
+            <div class="input-group">
+                <input type="datetime-local" id="start-time" name="start-time" value="2024-05-11T01:00">
+                <input type="datetime-local" id="end-time" name="end-time" value="2024-05-11T12:00">
+            </div>
+            <label for="client-name">Cliente</label>
+            <input type="text" id="client-name" name="client-name" placeholder="Nome">
+            <input type="email" id="client-email" name="client-email" placeholder="Email">
+            <button type="button" class="use-registered-data">Usar os dados da conta Registada</button>
+            <label for="car-license">Matrícula do Carro</label>
+            <input type="text" id="car-license" name="car-license" placeholder="Insira a matrícula do carro">
+            <label for="car-type">Tipo de Carro</label>
+            <div class="button-group">
+                <button type="button" class="car-type">Compacto</button>
+                <button type="button" class="car-type">SUV</button>
+            </div>
+            <label for="payment-method">Método de Pagamento</label>
+            <div class="button-group">
+                <button type="button" class="payment-method">Cartão de Crédito</button>
+                <button type="button" class="payment-method">PayPal</button>
+                <button type="button" class="payment-method">MBWAY</button>
+            </div>
+            <div class="total-payment">
+                <p>Total a pagar: 4,59€</p>
+            </div>
+            <button type="submit" class="complete-payment">Concluir Pagamento</button>
+        </form>
+    </div>
+</body>
+</html>

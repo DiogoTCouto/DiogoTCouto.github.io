@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estender a Reserva</title>
+    <link rel="stylesheet" href="style/extend-time.css">
+    <script src="javascript/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="reservation.html" class="back-button">&larr;</a>
+            <h1>Estender a Reserva</h1>
+        </header>
+        <div class="content">
+            <h2>Adicione Tempo</h2>
+            <div class="time-selector">
+                <div class="hours">
+                    <input type="number" id="hours" name="hours" min="0" max="23" value="2">
+                    <span>:</span>
+                </div>
+                <div class="minutes">
+                    <input type="number" id="minutes" name="minutes" min="0" max="59" value="20">
+                </div>
+            </div>
+            <div class="new-end-time">
+                <p>Data Prevista após adicionar as horas</p>
+                <p class="date">12 de Maio 2024 - 12:00</p>
+            </div>
+            <div class="cost">
+                <img src="images/cost-icon.png" alt="Custo">
+                <p>Custo: €2.33</p>
+            </div>
+            <div class="button-group">
+                <button type="button" class="cancel-button">Cancelar</button>
+                <button type="button" class="extend-button">Estender</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

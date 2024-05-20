@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    height: 550px; /* Altura fixa */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical */
+    text-align: left;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header .back-button {
+    text-decoration: none;
+    color: #6A0DAD;
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 1.2em;
+    color: #6A0DAD;
+    margin: 0;
+}
+
+.reservation-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-details h2 {
+    font-size: 1em;
+    color: #6A0DAD;
+    margin-bottom: 10px;
+}
+
+.reservation-info, .time-remaining, .reservation-validity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.reservation-info img, .time-remaining img, .reservation-validity img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.reservation-info div, .time-remaining div, .reservation-validity div {
+    font-size: 0.9em;
+}
+
+button.extend-reservation {
+    background-color: #6A0DAD;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+button.extend-reservation:hover {
+    background-color: #5a0a9d;
+}

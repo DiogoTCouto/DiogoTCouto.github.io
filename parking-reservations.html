@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parques de Estacionamento Próximos</title>
+    <link rel="stylesheet" href="style/parking-reservations.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="customer-dashboard.html" class="back-button">&larr;</a>
+            <h1>Parques de Estacionamento Próximos</h1>
+        </header>
+        <div class="tabs">
+            <button class="tab active" data-tab="list">Lista</button>
+            <button class="tab" data-tab="map">Mapa</button>
+        </div>
+        <p class="subtitle">Selecione um Parque de Estacionamento</p>
+        <ul class="parking-list">
+            <li data-park="Parque 1">
+                <img src="images/nearby-parks-icon.jpg" alt="Parque 1">
+                <div>
+                    <p>Parque 1</p>
+                    <p class="distance">A 100 metros de distância</p>
+                </div>
+            </li>
+            <li data-park="Parque 2">
+                <img src="images/nearby-parks-icon.jpg" alt="Parque 2">
+                <div>
+                    <p>Parque 2</p>
+                    <p class="distance">A 150 metros de distância</p>
+                </div>
+            </li>
+            <li data-park="Parque 3">
+                <img src="images/nearby-parks-icon.jpg" alt="Parque 3">
+                <div>
+                    <p>Parque 3</p>
+                    <p class="distance">A 270 metros de distância</p>
+                </div>
+            </li>
+            <li data-park="Parque 4">
+                <img src="images/nearby-parks-icon.jpg" alt="Parque 4">
+                <div>
+                    <p>Parque 4</p>
+                    <p class="distance">A 560 metros de distância</p>
+                </div>
+            </li>
+            <li data-park="Parque 5">
+                <img src="images/nearby-parks-icon.jpg" alt="Parque 5">
+                <div>
+                    <p>Parque 5</p>
+                    <p class="distance">A 880 metros de distância</p>
+                </div>
+            </li>
+            <li data-park="Parque 6">
+                <img src="images/nearby-parks-icon.jpg" alt="Parque 6">
+                <div>
+                    <p>Parque 6</p>
+                    <p class="distance">A 1160 metros de distância</p>
+                </div>
+            </li>
+            <li data-park="Parque 7">
+                <img src="images/nearby-parks-icon.jpg" alt="Parque 7">
+                <div>
+                    <p>Parque 7</p>
+                    <p class="distance">A 2780 metros de distância</p>
+                </div>
+            </li>
+        </ul>
+        <button type="submit" class="continue-button" id="reserve-button">Reservar Vaga</button>
+    </div>
+    <script src="javascript/script.js"></script>
+</body>
+</html>

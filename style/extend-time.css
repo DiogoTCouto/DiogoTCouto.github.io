@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    text-decoration: none;
+    color: #6A0DAD;
+    font-size: 1.5em;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 1.2em;
+    color: #6A0DAD;
+    margin: 0;
+}
+
+.content h2 {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.time-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.time-selector div {
+    display: flex;
+    align-items: center;
+}
+
+.hours input, .minutes input {
+    width: 50px;
+    padding: 10px;
+    font-size: 1.5em;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.new-end-time {
+    margin-bottom: 20px;
+}
+
+.new-end-time p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 5px 0;
+}
+
+.new-end-time .date {
+    font-size: 1em;
+    color: #000;
+}
+
+.cost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cost img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.cost p {
+    font-size: 1em;
+    color: #000;
+    margin: 0;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel-button, .extend-button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.cancel-button {
+    background-color: #ddd;
+    color: #333;
+}
+
+.extend-button {
+    background-color: #6A0DAD;
+    color: #fff;
+}
+
+.extend-button:hover {
+    background-color: #5a0a9d;
+}

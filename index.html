@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WePark - Login</title>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="javascript/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/logo-no-background.png" alt="WePark Logo" class="logo">
+        </header>
+        <form id="loginForm" class="login-form">
+            <h2 id="account-title">Conta de Gestor <br>de Parque</h2>
+            <div class="switch-account">
+                <img id="account-icon" src="images/account-icon.png" alt="Icon">
+                <a id="switch-link" href="#">Mudar para conta de cliente</a>
+            </div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <div class="button-group">
+                <a href="reset-password.html" class="forgot-password">Forgot Password?</a>
+                <button type="submit"> &nbsp &nbsp &nbsp Login &nbsp &nbsp &nbsp</button>
+            </div>
+            <!-- Elemento para a mensagem de erro -->
+            <div id="error-message" class="error-message"></div>
+        </form>
+        <div class="signup">
+            <p>New to WePark? <a href="#">Sign Up</a></p>
+        </div>
+        <footer>
+            <p>Descomplique a Gestão com WePark: Obtenha agora a Chave-na-Mão</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    max-height: 550px; /* Altura fixa */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical */
+    text-align: left;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+header .back-button {
+    text-decoration: none;
+    color: #6A0DAD;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 1.2em;
+    color: #6A0DAD;
+    margin: 0;
+}
+
+header p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 5px 0 20px;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+input[type="datetime-local"],
+input[type="text"],
+input[type="email"] {
+    width: calc(50% - 5px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+button.use-registered-data {
+    background-color: #6A0DAD;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+button.use-registered-data:hover {
+    background-color: #5a0a9d;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+button.car-type,
+button.payment-method {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+button.car-type:hover,
+button.payment-method:hover {
+    background-color: #ddd;
+}
+
+button.selected {
+    border: 2px solid #6A0DAD;
+    background-color: #e0e0f8;
+}
+
+.total-payment {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.complete-payment {
+    background-color: #6A0DAD;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+}
+
+.complete-payment:hover {
+    background-color: #5a0a9d;
+}
