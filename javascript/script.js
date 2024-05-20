@@ -71,7 +71,37 @@ document.addEventListener("DOMContentLoaded", function() {
             return re.test(email);
         }
     }
+    // Redirection logic for "Gestão de Reservas"
+    const gestaoReservasButton = document.getElementById('gestao-reservas');
+    if (gestaoReservasButton) {
+        gestaoReservasButton.addEventListener('click', function() {
+            window.location.href = 'reservations.html';
+        });
+    }
+    // Logic for reservation details
+    const detailsButtons = document.querySelectorAll('.details-button');
+    detailsButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            window.location.href = 'reservation-details.html';
+        });
+    });
 
+    // Tab functionality
+    const tabButtons = document.querySelectorAll('.tab');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove 'active' class from all buttons
+            tabButtons.forEach(b => b.classList.remove('active'));
+
+            // Add 'active' class to the clicked button
+            button.classList.add('active');
+
+            // Show corresponding tab content
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+            document.getElementById(button.getAttribute('data-tab')).classList.add('active');
+        });
+    });
     // Parque Selection Logic
     const parkingItems = document.querySelectorAll('.parking-list li');
     if (parkingItems.length > 0) {
@@ -229,6 +259,23 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+document.addEventListener("DOMContentLoaded", function() {
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.getAttribute('data-tab');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            tabContents.forEach(tc => tc.classList.remove('active'));
+
+            tab.classList.add('active');
+            document.getElementById(target).classList.add('active');
+        });
+    });
+});
+    
     fetch('javascript/user.json')
         .then(response => response.json())
         .then(data => {

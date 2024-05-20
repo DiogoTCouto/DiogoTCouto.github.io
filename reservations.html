@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Reservas</title>
+    <link rel="stylesheet" href="style/reservations.css">
+    <script src="javascript/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="customer-dashboard.html" class="back-button">&larr;</a>
+            <h1>Gestão de Reservas</h1>
+        </header>
+        <div class="tabs">
+            <button class="tab active" data-tab="atualmente">Atualmente</button>
+            <button class="tab" data-tab="expirado">Expirado</button>
+        </div>
+        <div class="tab-content active" id="atualmente">
+            <ul class="reservation-list">
+                <li>
+                    <img src="images/nearby-parks-icon.jpg" alt="Reserva #5">
+                    <div>
+                        <p>Reserva #5</p>
+                        <p>09/05/2024</p>
+                    </div>
+                    <button class="details-button">Detalhes</button>
+                </li>
+                <!-- Adicione mais itens de reserva conforme necessário -->
+            </ul>
+        </div>
+        <div class="tab-content" id="expirado">
+            <ul class="reservation-list">
+                <!-- Adicione itens de reserva expirados conforme necessário -->
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
