@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos</title>
+    <link rel="stylesheet" href="style/expenses.css">
+    <script src="javascript/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js library -->
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="customer-dashboard.html" class="back-button">&larr;</a>
+            <h1>Gastos</h1>
+        </header>
+        <section class="expenses-section">
+            <div class="chart-container">
+                <canvas id="expensesChart"></canvas>
+            </div>
+            <div class="total-expenses">
+                <p>Total de Gastos</p>
+                <p id="total-expenses-value">124.43 €</p>
+            </div>
+        </section>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('expensesChart').getContext('2d');
+            const expensesChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Gastos com Reservas',
+                        data: [12, 19, 3, 5, 2, 3, 20, 15, 8, 10, 6, 12],
+                        backgroundColor: 'rgba(102, 102, 102, 0.8)',
+                        borderColor: 'rgba(102, 102, 102, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

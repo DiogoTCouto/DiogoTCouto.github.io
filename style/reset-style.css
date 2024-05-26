@@ -14,36 +14,21 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 320px;
-    height: 550px; 
     text-align: center;
-    position: relative; 
 }
 
 .back-button {
     background: none;
-    color: #666;
-    font-size: 24px;
+    border: none;
+    font-size: 1.5em;
+    color: #6A0DAD;
     cursor: pointer;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.back-button:hover {
-    background-color: #6A0DAD;
-    color: #fff;
+    margin-bottom: 20px;
 }
 
 h2 {
     margin-bottom: 10px;
-    color: #333;
+    color: #6A0DAD;
 }
 
 p {
@@ -57,19 +42,19 @@ p {
     align-items: center;
 }
 
-input {
+.reset-form input[type="email"] {
+    width: 100%;
     padding: 10px;
-    margin: 5px 0 15px 0;
+    margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 0.9em;
-    width: calc(100% - 22px);
+    font-size: 1em;
 }
 
-button {
-    background-color: #007bff;
+.reset-form button {
+    background-color: #6A0DAD;
     color: #fff;
-    padding: 10px 15px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     font-size: 1em;
@@ -77,6 +62,16 @@ button {
     width: 100%;
 }
 
-button:hover {
-    background-color: #0056b3;
+.reset-form button:hover {
+    background-color: #5a0a9d;
+}
+
+.alert-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #6A0DAD;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1em;
+    display: none; /* Hide by default */
 }

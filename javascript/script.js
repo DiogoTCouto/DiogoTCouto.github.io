@@ -1,5 +1,45 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Login Form Logic
+    // Redirecionamento ao clicar no ícone de configurações
+    const settingsIcon = document.getElementById('settings-icon');
+    if (settingsIcon) {
+        settingsIcon.addEventListener('click', function() {
+            console.log('Configurações clicadas');
+            window.location.href = 'profile.html';
+        });
+    }
+
+        // Redirecionar ao clicar no botão de cancelar
+    const cancelProfileButton = document.querySelector('.cancel-profile-button');
+    if (cancelProfileButton) {
+        cancelProfileButton.addEventListener('click', function() {
+            window.location.href = 'profile.html';
+        });
+    }
+
+    // Salvar alterações no perfil
+    const saveButton = document.querySelector('.save-button');
+    if (saveButton) {
+        saveButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('As alterações foram salvas!');
+            window.location.href = 'profile.html';
+        });
+    }
+
+    // Redirecionar ao clicar no botão de logout
+    const logoutButton = document.querySelector('.logout-button');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    }   
+    const expensesLink = document.querySelector('.feature .expenses-link');
+    if (expensesLink) {
+        expensesLink.addEventListener('click', function() {
+            window.location.href = 'expenses.html';
+        });
+    }
+    
     const loginForm = document.getElementById("loginForm");
     if (loginForm) {
         const usernameField = document.getElementById("username");
@@ -71,14 +111,14 @@ document.addEventListener("DOMContentLoaded", function() {
             return re.test(email);
         }
     }
-    // Redirection logic for "Gestão de Reservas"
+
     const gestaoReservasButton = document.getElementById('gestao-reservas');
     if (gestaoReservasButton) {
         gestaoReservasButton.addEventListener('click', function() {
             window.location.href = 'reservations.html';
         });
     }
-    // Logic for reservation details
+
     const detailsButtons = document.querySelectorAll('.details-button');
     detailsButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -86,23 +126,17 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Tab functionality
     const tabButtons = document.querySelectorAll('.tab');
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove 'active' class from all buttons
             tabButtons.forEach(b => b.classList.remove('active'));
-
-            // Add 'active' class to the clicked button
             button.classList.add('active');
-
-            // Show corresponding tab content
             const tabContents = document.querySelectorAll('.tab-content');
             tabContents.forEach(content => content.classList.remove('active'));
             document.getElementById(button.getAttribute('data-tab')).classList.add('active');
         });
     });
-    // Parque Selection Logic
+
     const parkingItems = document.querySelectorAll('.parking-list li');
     if (parkingItems.length > 0) {
         let selectedPark = null;
@@ -126,17 +160,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             });
         }
-
-        const tabButtons = document.querySelectorAll('.tab');
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                tabButtons.forEach(b => b.classList.remove('active'));
-                button.classList.add('active');
-            });
-        });
     }
 
-    // Reservation Page Logic
     const reservationTitle = document.getElementById('reservation-title');
     if (reservationTitle) {
         const urlParams = new URLSearchParams(window.location.search);
@@ -149,19 +174,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Fill in registered data
     const useRegisteredDataButton = document.querySelector('.use-registered-data');
     if (useRegisteredDataButton) {
         useRegisteredDataButton.addEventListener('click', () => {
-            const username = "test"; // Substitute this with actual user data
-            const email = "email@examplo.com"; // Substitute this with actual user data
-
+            const username = "test";
+            const email = "email@examplo.com";
             document.getElementById('client-name').value = username;
             document.getElementById('client-email').value = email;
         });
     }
 
-    // Highlight selected car type and payment method
     const carTypeButtons = document.querySelectorAll('.car-type');
     carTypeButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -178,12 +200,10 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Redirection to MB WAY page on payment submission
     const completePaymentButton = document.querySelector('.complete-payment');
     if (completePaymentButton) {
         completePaymentButton.addEventListener('click', (event) => {
             event.preventDefault();
-            // Verifica se o método de pagamento selecionado é MBWAY
             const selectedPaymentMethod = document.querySelector('.payment-method.selected');
             if (selectedPaymentMethod && selectedPaymentMethod.textContent === 'MBWAY') {
                 window.location.href = 'mbway-payment.html';
@@ -193,7 +213,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // MB WAY payment logic
     const paymentForm = document.querySelector('.payment-form');
     if (paymentForm) {
         paymentForm.addEventListener('submit', function(event) {
@@ -214,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     }
-        // Extend time logic
+
     const hoursInput = document.getElementById('hours');
     const minutesInput = document.getElementById('minutes');
     const dateElement = document.querySelector('.new-end-time .date');
@@ -223,15 +242,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const cancelButton = document.querySelector('.cancel-button');
 
     if (hoursInput && minutesInput && dateElement && costElement && extendButton && cancelButton) {
-        const initialDate = new Date(2024, 4, 11, 12, 0, 0); // Example initial date: 11 May 2024 - 12:00
-        const costPerHour = 1; // Example cost per hour
+        const initialDate = new Date(2024, 4, 11, 12, 0, 0);
+        const costPerHour = 1;
 
         function updateDateAndCost() {
             const hours = parseInt(hoursInput.value, 10) || 0;
             const minutes = parseInt(minutesInput.value, 10) || 0;
             const newDate = new Date(initialDate.getTime() + hours * 60 * 60 * 1000 + minutes * 60 * 1000);
             dateElement.textContent = newDate.toLocaleString('pt-PT', { dateStyle: 'long', timeStyle: 'short' });
-
             const totalCost = hours * costPerHour + (minutes / 60) * costPerHour;
             costElement.textContent = `Custo: €${totalCost.toFixed(2)}`;
         }
@@ -248,42 +266,76 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = 'reservation.html';
         });
 
-        updateDateAndCost(); // Update date and cost on initial load
+        updateDateAndCost();
     }
-    
-    // Redirection logic for the "Estender a Reserva" button
+
     const extendReservationButton = document.querySelector('.extend-reservation');
     if (extendReservationButton) {
         extendReservationButton.addEventListener('click', function() {
             window.location.href = 'extend-time.html';
         });
     }
+    const editProfileButton = document.getElementById('edit-profile-button');
+    if (editProfileButton) {
+        editProfileButton.addEventListener('click', function() {
+            window.location.href = 'edit-profile.html';
+        });
+    }
+});
 
 document.addEventListener("DOMContentLoaded", function() {
-    const tabs = document.querySelectorAll('.tab');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const target = tab.getAttribute('data-tab');
-
-            tabs.forEach(t => t.classList.remove('active'));
-            tabContents.forEach(tc => tc.classList.remove('active'));
-
-            tab.classList.add('active');
-            document.getElementById(target).classList.add('active');
+    // Inicializar o mapa
+    // Redirecionar para a página de lista quando a aba "Lista" for clicada
+    const listTab = document.querySelector('.tab[data-tab="list"]');
+    if (listTab) {
+        listTab.addEventListener('click', function() {
+            window.location.href = 'parking-reservations.html';
         });
-    });
+    }
+
+    if (document.getElementById('map')) {
+        var map = L.map('map').setView([38.736946, -9.142685], 13); // Coordenadas de Lisboa como exemplo
+
+        // Adicionar camada de tiles do OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Definir o ícone personalizado
+        var customIcon = L.icon({
+            iconUrl: 'images/parking_space.jpg',
+            iconSize: [32, 32], // tamanho do ícone
+            iconAnchor: [16, 32], // ponto do ícone que corresponde à posição do marcador
+            popupAnchor: [0, -32] // ponto a partir do qual o popup deve abrir em relação ao ícone
+        });
+
+        // Adicionar marcadores de exemplo para parques de estacionamento
+var parkingSpots = [
+    { "name": "Parque 1", "lat": 38.736946, "lng": -9.142685 },
+    { "name": "Parque 2", "lat": 38.749946, "lng": -9.135685 },
+    { "name": "Parque 3", "lat": 38.744946, "lng": -9.145685 },
+    { "name": "Parque 4", "lat": 38.755946, "lng": -9.148685 },
+    { "name": "Parque 5", "lat": 38.753946, "lng": -9.145685 },
+    { "name": "Parque 6", "lat": 38.73946, "lng": -9.155685 },
+    { "name": "Parque 7", "lat": 38.733946, "lng": -9.145685 }
+];
+        parkingSpots.forEach(function(spot) {
+            var marker = L.marker([spot.lat, spot.lng], { icon: customIcon }).addTo(map)
+                .bindPopup(spot.name)
+                .bindTooltip(spot.name); // Adicionar tooltip com o nome do parque
+
+            marker.on('click', function() {
+                window.location.href = `reservation.html?park=${encodeURIComponent(spot.name)}`;
+            });
+        });
+    }
+
+    // Redirecionar para a página de mapa quando a aba "Mapa" for clicada
+    const mapTab = document.querySelector('.tab[data-tab="map"]');
+    if (mapTab) {
+        mapTab.addEventListener('click', function() {
+            window.location.href = 'map.html';
+        });
+    }
 });
-    
-    fetch('javascript/user.json')
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('profile-picture').src = data.profile_picture;
-            document.getElementById('profile-name').textContent = data.name;
-            document.getElementById('profile-email').textContent = data.email;
-            document.getElementById('profile-joined-date').textContent = data.joined_date;
-            document.getElementById('profile-type').textContent = data.client_type;
-        })
-        .catch(error => console.error('Error fetching the user data:', error));
-});
+

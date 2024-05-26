@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .back-button {
+    text-decoration: none;
+    color: #6A0DAD;
+    font-size: 1.5em;
+}
+
+header h1 {
+    font-size: 1.2em;
+    color: #6A0DAD;
+    margin: 0;
+}
+
+.expenses-section {
+    margin-top: 20px;
+}
+
+.chart-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.total-expenses {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.total-expenses p {
+    margin: 0;
+    color: #666;
+}
+
+#total-expenses-value {
+    font-size: 1.5em;
+    color: #333;
+}
