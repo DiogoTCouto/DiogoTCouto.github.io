@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="style/profile-gestor.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="gestor-dashboard.html" class="back-button">&#8592;</a>
+            <h1>Perfil</h1>
+            <button id="edit-profile-button-gestor" class="edit-button">&#9998;</button>
+        </header>
+        <div class="profile-picture">
+            <img src="images/vasco.png" alt="Profile Picture" id="profile-picture">
+        </div>
+        <div class="profile-info">
+            <h2 id="profile-name">Diogo Cabral</h2>
+            <p id="profile-type">Perfil Cliente</p>
+            <button class="logout-button">Log Out</button>
+        </div>
+        <div class="profile-details">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" value="Diogo Cabral" readonly>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="exemplo123@gmail.com" readonly>
+            
+            <label for="address">Morada</label>
+            <input type="text" id="address" name="address" value="Rua da Liberdade" readonly>
+            
+            <label for="reservations">Total de Reservas Efetuadas</label>
+            <input type="text" id="reservations" name="reservations" value="10" readonly>
+        </div>
+    </div>
+    <script src="javascript/script.js" defer></script>
+</body>
+</html>

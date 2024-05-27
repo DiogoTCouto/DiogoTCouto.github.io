@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    max-height: 100vh;
+    overflow-y: auto;
+    text-align: center;
+    position: relative;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.back-button {
+    text-decoration: none;
+    color: #6A0DAD;
+    font-size: 1.5em;
+}
+
+h1 {
+    font-size: 1.2em;
+    color: #6A0DAD;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #6A0DAD;
+}
+
+.content {
+    overflow-y: auto;
+}
+
+.calendar-container,
+.time-container,
+.price-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.calendar-container h2,
+.time-container label,
+.price-container label {
+    font-size: 1em;
+    color: #6A0DAD;
+    margin-bottom: 10px;
+}
+
+.calendar,
+.time-picker,
+.price-input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.confirm-button {
+    background-color: #6A0DAD;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    width: calc(100% - 22px);
+    margin-top: 20px;
+}
+
+.confirm-button:hover {
+    background-color: #5a0a9d;
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price-container input[type="checkbox"] {
+    margin-left: 10px;
+}

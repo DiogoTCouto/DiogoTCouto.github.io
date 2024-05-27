@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Operações</title>
+    <link rel="stylesheet" href="style/gestao-operacoes.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="gestor-dashboard.html" class="back-button">&larr;</a>
+            <h1>Gestão de Operações</h1>
+            <div class="header-icons">
+                <button class="icon-button search-button">&#128269;</button>
+                <button class="icon-button add-button">+</button>
+            </div>
+        </header>
+        <div class="status-bar">
+            <div class="status-item green">53</div>
+            <div class="status-item gray">421</div>
+            <div class="status-item red">23</div>
+        </div>
+            
+        <div class="tab-content active" id="parque">
+            <p class="page-title">Atualmente</p>
+            <div class="operation-item" data-client="joao-pedro">
+                <div class="time-box gray">01:00</div>
+                <div class="info">
+                    <p><img src="images/customer-icon.jpg" alt="User Icon" class="icon"> João Pedro</p>
+                    <p><img src="images/nearby-parks-icon.jpg" alt="Car Icon" class="icon"> PEUGEOT 2006</p>
+                </div>
+                <div class="details">
+                    <span class="count">3</span>
+                    <span class="plate">ABCD10F</span>
+                </div>
+            </div>
+            <div class="operation-item" data-client="tomas-rocha">
+                <div class="time-box gray">05:00</div>
+                <div class="info">
+                    <p>Tomás Rocha</p>
+                    <p>FIAT 2015</p>
+                </div>
+                <div class="details">
+                    <span class="count">3</span>
+                    <span class="plate">AAAA10</span>
+                </div>
+            </div>
+            <div class="operation-item" data-client="carlos-santos">
+                <div class="time-box gray">06:00</div>
+                <div class="info">
+                    <p><img src="images/customer-icon.jpg" alt="User Icon" class="icon"> Carlos Santos</p>
+                    <p><img src="images/nearby-parks-icon.jpg" alt="Car Icon" class="icon"> FIAT 2018</p>
+                </div>
+                <div class="details">
+                    <span class="count">3</span>
+                    <span class="plate">MNOP40N</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="tab-content" id="chegadas">
+            <p class="page-title">Chegadas</p>
+            <div class="operation-item" data-client="joao-pedro">
+                <div class="time-box green">01:00</div>
+                <div class="info">
+                    <p>João Pedro</p>
+                    <p>PEUGEOT 2006</p>
+                </div>
+                <div class="details">
+                    <span class="count">3</span>
+                    <span class="plate">ABCD10F</span>
+                </div>
+                
+            </div>
+            <div class="operation-item" data-client="tomas-rocha">
+                <div class="time-box green">04:00</div>
+                <div class="info">
+                    <p>Tomás Rocha</p>
+                    <p>PEUGEOT 2006</p>
+                </div>
+                <div class="details">
+                    <span class="count">3</span>
+                    <span class="plate">ABCD10F</span>
+                </div>
+            </div>
+        </div>
+        <div class=" tab-content" id="saidas">
+            <p class="page-title">Saídas</p>
+            <div class="operation-item" data-client="tiago-hotel">
+                <div class="time-box red">12:00</div>
+                <div class="info">
+                    <p>Tiago Hotel</p>
+                    <p>PEUGEOT 2006</p>
+                </div>
+                <div class="details">
+                    <span class="count">3</span>
+                    <span class="plate">ABCD10F</span>
+                </div>
+            </div>
+            <div class="operation-item" data-client="ana-silva">
+                <div class="time-box red">18:00</div>
+                <div class="info">
+                    <p>Ana Silva</p>
+                    <p>FORD 2015</p>
+                </div>
+                <div class="details">
+                    <span class="count">3</span>
+                    <span class="plate">IJKL30M</span>
+                </div>
+            </div>
+        </div>
+        <div class="tabs bottom-tabs">
+            <button class="tab" data-tab="chegadas">Chegadas</button>
+            <button class="tab active" data-tab="parque">Parque</button>
+            <button class="tab" data-tab="saidas">Saídas</button>
+        </div>
+    </div>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-button">&times;</span>
+            <h2>Informação do Cliente</h2>
+            <p id="client-name">Nome: João Pedro</p>
+            <p id="client-plate">Matrícula: ABCD10F</p>
+            <p id="client-car">Carro: PEUGEOT 2006</p>
+            <p id="client-time">Tempo: 11/05/2024 às 15:00</p>
+            <p id="client-amount">Montante a Pagar: 5,59 €</p>
+            <div id="edit-fields" style="display: none;">
+                <label for="edit-name">Nome:</label>
+                <input type="text" id="edit-name" value="João Pedro">
+                <label for="edit-plate">Matrícula:</label>
+                <input type="text" id="edit-plate" value="ABCD10F">
+                <label for="edit-car">Carro:</label>
+                <input type="text" id="edit-car" value="PEUGEOT 2006">
+                <label for="edit-time">Tempo:</label>
+                <input type="text" id="edit-time" value="11/05/2024 às 15:00">
+                <label for="edit-amount">Montante a Pagar:</label>
+                <input type="text" id="edit-amount" value="5,59 €">
+            </div>
+            <button class="edit-button" id="edit-button">Editar</button>
+            <button class="confirm-button" id="confirm-button" style="display: none;">Salvar</button>
+        </div>
+    </div>
+    <script src="javascript/script.js"></script>
+</body>
+</html>

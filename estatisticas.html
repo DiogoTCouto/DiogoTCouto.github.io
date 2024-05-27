@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatísticas</title>
+    <link rel="stylesheet" href="style/estatisticas.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="gestor-dashboard.html" class="back-button">&larr;</a>
+            <h1>Estatísticas</h1>
+        </header>
+        <div class="content">
+            <div class="chart-container">
+                <h2>Entrada de carros no parque</h2>
+                <canvas id="entradaCarrosChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Saída de carros no parque</h2>
+                <canvas id="saidaCarrosChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Lucro do parque</h2>
+                <canvas id="lucroParqueChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="javascript/estatisticas.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobrança</title>
+    <link rel="stylesheet" href="style/cobranca.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="gestor-dashboard.html" class="back-button">&larr;</a>
+            <h1>Cobrança</h1>
+            <div class="header-icons">
+            </div>
+        </header>
+        <div class="content">
+            <div class="calendar-container">
+                <h2>Horários</h2>
+                <input type="text" id="calendar" class="calendar">
+            </div>
+            <div class="time-container">
+                <label for="startTime">De:</label>
+                <input type="text" id="startTime" class="time-picker">
+                <label for="endTime">Até:</label>
+                <input type="text" id="endTime" class="time-picker">
+            </div>
+            <div class="price-container">
+                <label for="price">Preço a pagar:</label>
+                <input type="text" id="price" class="price-input" value="4.59 € / hora">
+                <label for="freeNight">Grátis nas horas noturnas:</label>
+                <input type="checkbox" id="freeNight">
+            </div>
+            <button class="confirm-button">Confirmar Mudança de Preço</button>
+        </div>
+    </div>
+    <script src="javascript/cobranca.js"></script>
+</body>
+</html>

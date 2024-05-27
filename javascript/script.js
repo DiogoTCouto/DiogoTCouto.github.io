@@ -8,6 +8,45 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    const settingsIconGestor = document.getElementById('settings-icon-gestor');
+    if (settingsIconGestor) {
+        settingsIconGestor.addEventListener('click', function() {
+            console.log('Configurações clicadas');
+            window.location.href = 'profile-gestor.html';
+        });
+    }
+    const notificationsCustomer = document.getElementById('notifications-customer');
+    if (notificationsCustomer) {
+        notificationsCustomer.addEventListener('click', function() {
+            console.log('Notificações');
+            window.location.href = 'customer-notifications.html';
+        });
+    }
+    const notificationsGestor = document.getElementById('notifications-gestor');
+    if (notificationsGestor) {
+        notificationsGestor.addEventListener('click', function() {
+            console.log('Notificações');
+            window.location.href = 'manager-notifications.html';
+        });
+    }
+
+    const cancelProfileButtonGestor = document.querySelector('.cancel-profile-button-gestor');
+    if (cancelProfileButtonGestor) {
+        cancelProfileButtonGestor.addEventListener('click', function() {
+            window.location.href = 'profile-gestor.html';
+        });
+    }
+
+
+    // Salvar alterações no perfil
+    const saveButtonGestor = document.querySelector('.save-button-gestor');
+    if (saveButtonGestor) {
+        saveButtonGestor.addEventListener('click', function(event) {
+            event.preventDefault();
+            alert('As alterações foram salvas!');
+            window.location.href = 'profile-gestor.html';
+        });
+    }
         // Redirecionar ao clicar no botão de cancelar
     const cancelProfileButton = document.querySelector('.cancel-profile-button');
     if (cancelProfileButton) {
@@ -58,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 accountTitle.innerHTML = 'Conta de Gestor <br>de Parque';
                 switchLink.innerHTML = 'Mudar para conta de cliente';
-                accountIcon.src = 'images/account-icon.png';  
+                accountIcon.src = 'images/gestor.png';  
             }
             isManagerAccount = !isManagerAccount;
         });
@@ -234,6 +273,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    const cameraAccess = document.getElementById('camera-access');
+    if (cameraAccess) {
+        cameraAccess.addEventListener('click', function() {
+            window.location.href = 'security-cameras.html';
+        });
+    }
+    
     const hoursInput = document.getElementById('hours');
     const minutesInput = document.getElementById('minutes');
     const dateElement = document.querySelector('.new-end-time .date');
@@ -273,6 +319,13 @@ document.addEventListener("DOMContentLoaded", function() {
     if (extendReservationButton) {
         extendReservationButton.addEventListener('click', function() {
             window.location.href = 'extend-time.html';
+        });
+    }
+
+    const editProfileButtonGestor = document.getElementById('edit-profile-button-gestor');
+    if (editProfileButtonGestor) {
+        editProfileButtonGestor.addEventListener('click', function() {
+            window.location.href = 'edit-profile-gestor.html';
         });
     }
     const editProfileButton = document.getElementById('edit-profile-button');
@@ -339,3 +392,319 @@ var parkingSpots = [
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Slideshow functionality
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    document.querySelector('.prev').addEventListener('click', function() {
+        plusSlides(-1);
+    });
+
+    document.querySelector('.next').addEventListener('click', function() {
+        plusSlides(1);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+            currentSlide(index + 1);
+        });
+    });
+
+    // Initial slide
+    showSlides(slideIndex);
+
+    // Redirecionar ao clicar no acesso às câmeras
+    const cameraAccess = document.getElementById('camera-access');
+    if (cameraAccess) {
+        cameraAccess.addEventListener('click', function() {
+            window.location.href = 'security-cameras.html';
+        });
+    }
+});
+document.addEventListener("DOMContentLoaded", function() {
+    // Função para alternar entre abas
+    const tabButtons = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            tabButtons.forEach(b => b.classList.remove('active'));
+            button.classList.add('active');
+
+            const tab = button.getAttribute('data-tab');
+            tabContents.forEach(content => content.classList.remove('active'));
+            document.getElementById(tab).classList.add('active');
+        });
+    });
+
+    // Adicionar funcionalidade de pesquisa e adicionar
+    const searchButton = document.querySelector('.search-button');
+    const addButton = document.querySelector('.add-button');
+
+    if (searchButton) {
+        searchButton.addEventListener('click', function() {
+            alert('Funcionalidade de pesquisa ainda não implementada.');
+        });
+    }
+
+    if (addButton) {
+        addButton.addEventListener('click', function() {
+            alert('Funcionalidade de adicionar nova entrada ainda não implementada.');
+        });
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Função para abrir o pop-up
+    function openPopup(clientInfo) {
+        const popup = document.getElementById("popup");
+        document.getElementById("client-name").textContent = `Nome: ${clientInfo.name}`;
+        document.getElementById("client-plate").textContent = `Matrícula: ${clientInfo.plate}`;
+        document.getElementById("client-car").textContent = `Carro: ${clientInfo.car}`;
+        document.getElementById("client-time").textContent = `Tempo: ${clientInfo.time}`;
+        document.getElementById("client-amount").textContent = `Montante a Pagar: ${clientInfo.amount}`;
+        popup.style.display = "flex";
+    }
+
+    // Função para fechar o pop-up
+    function closePopup() {
+        const popup = document.getElementById("popup");
+        popup.style.display = "none";
+    }
+
+    // Adicionar evento de clique para as caixas de operação
+    const operationItems = document.querySelectorAll(".operation-item");
+    operationItems.forEach(item => {
+        item.addEventListener("click", function() {
+            const clientId = this.getAttribute("data-client");
+            const clientInfo = {
+                "joao-pedro": {
+                    name: "João Pedro",
+                    plate: "ABCD10F",
+                    car: "PEUGEOT 2006",
+                    time: "11/05/2024 às 15:00",
+                    amount: "5,59 €"
+                },
+                "tomas-rocha": {
+                    name: "Tomás Rocha",
+                    plate: "ABCD10F",
+                    car: "PEUGEOT 2006",
+                    time: "11/05/2024 às 15:00",
+                    amount: "5,59 €"
+                },
+                "tiago-hotel": {
+                    name: "Tiago Hotel",
+                    plate: "ABCD10F",
+                    car: "PEUGEOT 2006",
+                    time: "11/05/2024 às 15:00",
+                    amount: "5,59 €"
+                }
+            };
+            openPopup(clientInfo[clientId]);
+        });
+    });
+
+    // Fechar o pop-up ao clicar no botão de fechar
+    document.querySelector(".close-button").addEventListener("click", closePopup);
+
+    // Fechar o pop-up ao clicar fora do conteúdo do pop-up
+    document.getElementById("popup").addEventListener("click", function(event) {
+        if (event.target === this) {
+            closePopup();
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Função para abrir o pop-up
+    function openPopup(clientInfo) {
+        const popup = document.getElementById("popup");
+        document.getElementById("client-name").textContent = `Nome: ${clientInfo.name}`;
+        document.getElementById("client-plate").textContent = `Matrícula: ${clientInfo.plate}`;
+        document.getElementById("client-car").textContent = `Carro: ${clientInfo.car}`;
+        document.getElementById("client-time").textContent = `Tempo: ${clientInfo.time}`;
+        document.getElementById("client-amount").textContent = `Montante a Pagar: ${clientInfo.amount}`;
+
+        document.getElementById("edit-name").value = clientInfo.name;
+        document.getElementById("edit-plate").value = clientInfo.plate;
+        document.getElementById("edit-car").value = clientInfo.car;
+        document.getElementById("edit-time").value = clientInfo.time;
+        document.getElementById("edit-amount").value = clientInfo.amount;
+
+        popup.style.display = "flex";
+    }
+
+    // Função para fechar o pop-up
+    function closePopup() {
+        const popup = document.getElementById("popup");
+        popup.style.display = "none";
+    }
+
+    // Alternar para o modo de edição
+    function switchToEditMode() {
+        document.getElementById("edit-fields").style.display = "block";
+        document.querySelectorAll(".popup-content p").forEach(p => p.style.display = "none");
+        document.getElementById("edit-button").style.display = "none";
+        document.getElementById("confirm-button").style.display = "block";
+    }
+
+    // Salvar as mudanças e alternar para o modo de visualização
+    function saveChanges() {
+        const name = document.getElementById("edit-name").value;
+        const plate = document.getElementById("edit-plate").value;
+        const car = document.getElementById("edit-car").value;
+        const time = document.getElementById("edit-time").value;
+        const amount = document.getElementById("edit-amount").value;
+
+        document.getElementById("client-name").textContent = `Nome: ${name}`;
+        document.getElementById("client-plate").textContent = `Matrícula: ${plate}`;
+        document.getElementById("client-car").textContent = `Carro: ${car}`;
+        document.getElementById("client-time").textContent = `Tempo: ${time}`;
+        document.getElementById("client-amount").textContent = `Montante a Pagar: ${amount}`;
+
+        document.getElementById("edit-fields").style.display = "none";
+        document.querySelectorAll(".popup-content p").forEach(p => p.style.display = "block");
+        document.getElementById("edit-button").style.display = "block";
+        document.getElementById("confirm-button").style.display = "none";
+    }
+
+    // Adicionar evento de clique para as caixas de operação
+    const operationItems = document.querySelectorAll(".operation-item");
+    operationItems.forEach(item => {
+        item.addEventListener("click", function() {
+            const clientId = this.getAttribute("data-client");
+            const clientInfo = {
+                "joao-pedro": {
+                    name: "João Pedro",
+                    plate: "ABCD10F",
+                    car: "PEUGEOT 2006",
+                    time: "11/05/2024 às 15:00",
+                    amount: "5,59 €"
+                },
+                "tomas-rocha": {
+                    name: "Tomás Rocha",
+                    plate: "AAAA10",
+                    car: "FIAT 2015",
+                    time: "11/05/2024 às 15:00",
+                    amount: "5,59 €"
+                },
+                "tiago-hotel": {
+                    name: "Tiago Hotel",
+                    plate: "ABCD10F",
+                    car: "PEUGEOT 2006",
+                    time: "11/05/2024 às 15:00",
+                    amount: "5,59 €"
+                },
+                'ana-silva': {
+                    name: 'Ana Silva',
+                    plate: 'IJKL30M',
+                    car: 'FORD 2015',
+                    time: '11/05/2024 às 17:00',
+                    amount: '7,00 €'
+                },
+                'carlos-santos': {
+                    name: 'Carlos Santos',
+                    plate: 'MNOP40N',
+                    car: 'FIAT 2018',
+                    time: '11/05/2024 às 18:00',
+                    amount: '8,00 €'
+                },
+                'maria-oliveira': {
+                    name: 'Maria Oliveira',
+                    plate: 'QRST50P',
+                    car: 'BMW 2020',
+                    time: '11/05/2024 às 19:00',
+                    amount: '9,00 €'
+                },
+                'pedro-pereira': {
+                    name: 'Pedro Pereira',
+                    plate: 'UVWX60Q',
+                    car: 'AUDI 2021',
+                    time: '11/05/2024 às 20:00',
+                    amount: '10,00 €'
+                }
+            };
+            openPopup(clientInfo[clientId]);
+        });
+    });
+
+    // Fechar o pop-up ao clicar no botão de fechar
+    document.querySelector(".close-button").addEventListener("click", closePopup);
+
+    // Fechar o pop-up ao clicar fora do conteúdo do pop-up
+    document.getElementById("popup").addEventListener("click", function(event) {
+        if (event.target === this) {
+            closePopup();
+        }
+    });
+
+    // Alternar para o modo de edição ao clicar no botão "Editar"
+    document.getElementById("edit-button").addEventListener("click", switchToEditMode);
+
+    // Salvar as mudanças ao clicar no botão "Confirmar"
+    document.getElementById("confirm-button").addEventListener("click", saveChanges);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const loginForm = document.getElementById("loginForm");
+    const switchAccountLink = document.getElementById("switch-link");
+    const accountTitle = document.getElementById("account-title");
+    const accountIcon = document.getElementById("account-icon");
+    let isManagerAccount = true;
+
+    switchAccountLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        if (isManagerAccount) {
+            accountTitle.innerHTML = "Conta de Cliente";
+            switchAccountLink.textContent = "Mudar para conta de gestor";
+            accountIcon.src = "images/customer-icon.jpg"; // Substitua pelo ícone de gestor
+            isManagerAccount = false;
+        } else {
+            accountTitle.innerHTML = "Conta de Gestor <br>de Parque";
+            switchAccountLink.textContent = "Mudar para conta de cliente";
+            accountIcon.src = "images/gestor.png"; // Substitua pelo ícone de cliente
+            isManagerAccount = true;
+        }
+    });
+
+    loginForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const username = loginForm.username.value;
+        const password = loginForm.password.value;
+
+        // Aqui você pode adicionar a lógica de autenticação, se necessário
+        // Por exemplo, verificar username e password
+
+        if (isManagerAccount) {
+            window.location.href = "gestor-dashboard.html";
+        } else {
+            window.location.href = "customer-dashboard.html";
+        }
+    });
+});

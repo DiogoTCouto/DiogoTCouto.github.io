@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Perfil</title>
+    <link rel="stylesheet" href="style/edit-profile-gestor.css">
+    <script src="javascript/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="profile-gestor.html" class="back-button">&larr;</a>
+            <h1>Editar Perfil</h1>
+        </header>
+        <div class="profile-info">
+            <div class="user-info">
+                <img src="images/vasco.png" alt="User Icon" class="user-icon">
+                <div>
+                    <h2>Nome do Usuário</h2>
+                    <p>Perfil Cliente</p>
+                </div>
+            </div>
+            <div class="info-group">
+                <label>Editar o Nome</label>
+                <input type="text" id="edit-name" placeholder="Enter your name" value="Diogo Cabral">
+            </div>
+            <div class="info-group">
+                <label>Editar o Email</label>
+                <input type="email" id="edit-email" placeholder="Enter your email" value="exemplo123@gmail.com">
+            </div>
+            <div class="info-group">
+                <label>Editar a Password</label>
+                <input type="password" id="edit-password" placeholder="Enter new password">
+            </div>
+            <div class="info-group">
+                <label>Morada</label>
+                <input type="text" id="edit-address" value="Rua da Liberdade">
+            </div>
+            <div class="info-group">
+                <label>Total de Reservas Efetuadas</label>
+                <input type="text" id="edit-total-reservations" value="10" disabled>
+            </div>
+            <div class="button-group">
+                <button class="cancel-profile-button-gestor">Cancelar</button>
+                <button class="save-button-gestor">Guardar Alterações</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
