@@ -39,25 +39,21 @@ h1 {
     text-align: center;
 }
 
-.notifications-list {
+.notifications {
     margin-top: 20px;
 }
 
 .notification-item {
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
+    cursor: pointer;
     text-align: left;
 }
 
-.notification-title {
-    font-size: 1em;
-    font-weight: bold;
-    color: #333;
-    margin: 0;
+.notification-item p {
+    margin: 5px 0;
 }
 
-.notification-time {
-    font-size: 0.8em;
-    color: #777;
-    margin: 5px 0 0 0;
+.notification-item:hover {
+    background-color: #f0f0f0;
 }

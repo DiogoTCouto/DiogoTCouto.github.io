@@ -54,6 +54,14 @@ h1 {
     color: #6A0DAD;
 }
 
+#searchInput {
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
 .status-bar {
     display: flex;
     justify-content: space-around;
@@ -191,15 +199,15 @@ h1 {
     background-color: #fff;
     border-top: 1px solid #ddd;
     padding: 10px 0;
-    }
-    
+}
+
 .bottom-tabs .tab {
     flex: 1;
     padding: 10px;
     border: none;
     cursor: pointer;
     font-size: 1em;
-    }
+}
 
 .edit-button {
     background: none;
@@ -279,9 +287,21 @@ h1 {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+
 .icon {
     width: 20px;
     height: 20px;
     vertical-align: middle;
     margin-right: 1px;
+}
+.search-container {
+    display: none;
+    margin-right: 10px;
+}
+
+.search-input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
 }

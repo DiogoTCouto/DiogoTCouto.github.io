@@ -12,8 +12,11 @@
             <a href="gestor-dashboard.html" class="back-button">&larr;</a>
             <h1>Gestão de Operações</h1>
             <div class="header-icons">
-                <button class="icon-button search-button">&#128269;</button>
-                <button class="icon-button add-button">+</button>
+                <div class="search-container" id="searchContainer">
+                    <input type="text" id="searchInput" placeholder="Pesquisar" class="search-input">
+                </div>
+                <button class="icon-button search-button" id="searchButton">&#128269;</button>
+                <button class="icon-button add-button" id="gestao-reservas-gestor">+</button>
             </div>
         </header>
         <div class="status-bar">
@@ -38,8 +41,8 @@
             <div class="operation-item" data-client="tomas-rocha">
                 <div class="time-box gray">05:00</div>
                 <div class="info">
-                    <p>Tomás Rocha</p>
-                    <p>FIAT 2015</p>
+                    <p><img src="images/customer-icon.jpg" alt="User Icon" class="icon"> Tomas Rocha</p>
+                    <p><img src="images/nearby-parks-icon.jpg" alt="Car Icon" class="icon"> FIAT 2015</p>
                 </div>
                 <div class="details">
                     <span class="count">3</span>
@@ -57,15 +60,14 @@
                     <span class="plate">MNOP40N</span>
                 </div>
             </div>
-            
         </div>
         <div class="tab-content" id="chegadas">
             <p class="page-title">Chegadas</p>
             <div class="operation-item" data-client="joao-pedro">
                 <div class="time-box green">01:00</div>
                 <div class="info">
-                    <p>João Pedro</p>
-                    <p>PEUGEOT 2006</p>
+                    <p><img src="images/customer-icon.jpg" alt="User Icon" class="icon">João Pedro</p>
+                    <p><img src="images/nearby-parks-icon.jpg" alt="Car Icon" class="icon">PEUGEOT 2006</p>
                 </div>
                 <div class="details">
                     <span class="count">3</span>
@@ -76,8 +78,8 @@
             <div class="operation-item" data-client="tomas-rocha">
                 <div class="time-box green">04:00</div>
                 <div class="info">
-                    <p>Tomás Rocha</p>
-                    <p>PEUGEOT 2006</p>
+                    <p><img src="images/customer-icon.jpg" alt="User Icon" class="icon">Tomás Rocha</p>
+                    <p><img src="images/nearby-parks-icon.jpg" alt="Car Icon" class="icon">PEUGEOT 2006</p>
                 </div>
                 <div class="details">
                     <span class="count">3</span>
@@ -85,13 +87,13 @@
                 </div>
             </div>
         </div>
-        <div class=" tab-content" id="saidas">
+        <div class="tab-content" id="saidas">
             <p class="page-title">Saídas</p>
             <div class="operation-item" data-client="tiago-hotel">
                 <div class="time-box red">12:00</div>
                 <div class="info">
-                    <p>Tiago Hotel</p>
-                    <p>PEUGEOT 2006</p>
+                    <p><img src="images/customer-icon.jpg" alt="User Icon" class="icon">Tiago Hotel</p>
+                    <p><img src="images/nearby-parks-icon.jpg" alt="Car Icon" class="icon">PEUGEOT 2006</p>
                 </div>
                 <div class="details">
                     <span class="count">3</span>
@@ -101,8 +103,8 @@
             <div class="operation-item" data-client="ana-silva">
                 <div class="time-box red">18:00</div>
                 <div class="info">
-                    <p>Ana Silva</p>
-                    <p>FORD 2015</p>
+                    <p><img src="images/customer-icon.jpg" alt="User Icon" class="icon">Ana Silva</p>
+                    <p><img src="images/nearby-parks-icon.jpg" alt="Car Icon" class="icon">FORD 2015</p>
                 </div>
                 <div class="details">
                     <span class="count">3</span>

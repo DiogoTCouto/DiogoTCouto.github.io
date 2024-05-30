@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva da Vaga</title>
+    <link rel="stylesheet" href="style/reservation.css">
+    <script src="javascript/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="gestao-operacoes.html" class="back-button">&larr;</a>
+            <Reserva da Vaga>
+            <p>Preencha as informações necessárias abaixo</p>
+        </header>
+        <form class="reservation-form">
+            <label for="duration">Duração</label>
+            <div class="input-group">
+                <input type="datetime-local" id="start-time" name="start-time" value="2024-05-11T01:00">
+                <input type="datetime-local" id="end-time" name="end-time" value="2024-05-11T12:00">
+            </div>
+            <label for="client-name">Cliente</label>
+            <input type="text" id="client-name" name="client-name" placeholder="Nome">
+            <input type="email" id="client-email" name="client-email" placeholder="Email">
+            <label for="car-license">Matrícula do Carro</label>
+            <input type="text" id="car-license" name="car-license" placeholder="Insira a matrícula do carro">
+            <label for="car-type">Tipo de Carro</label>
+            <div class="button-group">
+                <button type="button" class="car-type">Compacto</button>
+                <button type="button" class="car-type">SUV</button>
+            </div>
+
+            <button type="submit" class="complete-reservation">Concluir A Reserva</button>
+        </form>
+    </div>
+</body>
+</html>

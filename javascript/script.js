@@ -132,6 +132,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         const resetForm = document.querySelector(".reset-form");
+        const errorMessage = document.getElementById("error-message");
+    
         if (resetForm) {
             resetForm.addEventListener("submit", function(event) {
                 event.preventDefault();
@@ -140,11 +142,11 @@ document.addEventListener("DOMContentLoaded", function() {
                     alert("Um link de recuperação de senha foi enviado para " + email);
                     window.location.href = "index.html";
                 } else {
-                    alert("Por favor, insira um email válido");
+                    errorMessage.textContent = "Por favor, insira um email válido";
                 }
             });
         }
-
+    
         function validateEmail(email) {
             const re = /\S+@\S+\.\S+/;
             return re.test(email);
@@ -157,6 +159,14 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = 'reservations.html';
         });
     }
+
+    const gestaoReservasButtonGestor = document.getElementById('gestao-reservas-gestor');
+    if (gestaoReservasButtonGestor) {
+        gestaoReservasButtonGestor.addEventListener('click', function() {
+            window.location.href = 'reservation-gestor.html';
+        });
+    }
+
 
     const detailsButtons = document.querySelectorAll('.details-button');
     detailsButtons.forEach(button => {
@@ -249,6 +259,16 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 alert('Por favor, selecione MBWAY como método de pagamento.');
             }
+        });
+    }
+
+    const completeReservationButton = document.querySelector('.complete-reservation');
+    if (completeReservationButton) {
+        
+        completeReservationButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            alert('Reserva efetuada com sucesso');
+            window.location.href = 'gestao-operacoes.html';
         });
     }
 
@@ -463,21 +483,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Adicionar funcionalidade de pesquisa e adicionar
-    const searchButton = document.querySelector('.search-button');
-    const addButton = document.querySelector('.add-button');
-
-    if (searchButton) {
-        searchButton.addEventListener('click', function() {
-            alert('Funcionalidade de pesquisa ainda não implementada.');
-        });
-    }
-
-    if (addButton) {
-        addButton.addEventListener('click', function() {
-            alert('Funcionalidade de adicionar nova entrada ainda não implementada.');
-        });
-    }
 });
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -706,5 +711,34 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             window.location.href = "customer-dashboard.html";
         }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchButton = document.getElementById("searchButton");
+    const searchContainer = document.getElementById("searchContainer");
+    const searchInput = document.getElementById("searchInput");
+
+    searchButton.addEventListener("click", function () {
+        if (searchContainer.style.display === "none" || searchContainer.style.display === "") {
+            searchContainer.style.display = "block";
+            searchInput.focus();
+        } else {
+            searchContainer.style.display = "none";
+        }
+    });
+
+    searchInput.addEventListener("input", function () {
+        const filter = searchInput.value.toLowerCase();
+        const operationItems = document.querySelectorAll(".operation-item");
+        
+        operationItems.forEach(function (item) {
+            const name = item.querySelector(".info p").innerText.toLowerCase();
+            if (name.includes(filter)) {
+                item.style.display = "";
+            } else {
+                item.style.display = "none";
+            }
+        });
     });
 });

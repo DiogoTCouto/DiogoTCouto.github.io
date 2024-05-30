@@ -137,3 +137,18 @@ button.selected {
 .complete-payment:hover {
     background-color: #5a0a9d;
 }
+
+.complete-reservation:hover {
+    background-color: #5a0a9d;
+}
+
+.complete-reservation {
+    background-color: #6A0DAD;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    width: 100%;
+}
