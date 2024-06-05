@@ -1,8 +1,5 @@
 # AS
 
-<@208746905616908299> 
-atualiza no teu repositorio publico o reade me
-
 # Analise de Sistemas Projeto (WePark)
 
 ## Grupo 304:
